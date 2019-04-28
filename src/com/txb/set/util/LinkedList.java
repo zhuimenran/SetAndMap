@@ -122,7 +122,7 @@ public class LinkedList <E>{
 		Node cur = dummyHead.next;
 		
 		while(cur != null) {
-			if(cur.equals(e)) {
+			if(cur.e.equals(e)) {
 				return true;
 			}
 			cur  = cur.next;
@@ -175,19 +175,21 @@ public class LinkedList <E>{
 	}
 	
 	public void removeElement(E e) {
-		Node cur = dummyHead;
-		
-		while(cur.next != null) {
-			if(cur.next.e.equals(e)) {
-				break;
-			}
-			cur = cur.next;
-		}
-		
-		if(cur.next != null) {
-			Node delNode = cur.next;
-			cur.next = delNode.next;
-			delNode.next = null;
-		}
-	}
+        Node pre = dummyHead;
+        while (pre.next != null) {
+            if (pre.next.e.equals(e)) {
+                break;//找到了要删除元素的前一个元素，
+            }
+            pre = pre.next;
+        }
+
+        //执行删除操作。
+        if (pre.next != null) {
+            Node deleNode = pre.next;
+            pre.next = deleNode.next;
+            deleNode.next = null;
+        }
+    }
+	
+	
 }

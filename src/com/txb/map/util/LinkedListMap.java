@@ -1,6 +1,8 @@
 package com.txb.map.util;
 
-
+/*
+ * 用链表实现map实现成功
+ */
 public class LinkedListMap<K,V> implements Map<K, V> {
 
 	private class Node{
