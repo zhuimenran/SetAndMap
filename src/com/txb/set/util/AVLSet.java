@@ -1,15 +1,15 @@
 package com.txb.set.util;
 
-import com.txb.map.util.AVLTree;
+import com.txb.map.util.AVLTree1;
 import com.txb.map.util.Map;
 
 public class AVLSet <E extends Comparable<E>> implements Set<E>{
 
-	private AVLTree<E,Object> tree;
+	private AVLTree1<E,Object> tree;
 	
 	
 	public AVLSet() {
-		tree = new AVLTree<E,Object>();
+		tree = new AVLTree1<E,Object>();
 	}
 	
 	@Override

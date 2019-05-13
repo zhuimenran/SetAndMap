@@ -2,10 +2,10 @@ package com.txb.map.util;
 
 public class AVLMap <K extends Comparable<K>,V> implements Map<K,V>{
 
-	private AVLTree<K,V> tree;
+	private AVLTree1<K,V> tree;
 	
 	public AVLMap() {
-		tree = new AVLTree<K,V>();
+		tree = new AVLTree1<K,V>();
 	}
 	@Override
 	public void add(K key, V value) {
