@@ -2,6 +2,7 @@ package com.txb.map.test;
 
 import java.util.ArrayList;
 
+import com.txb.map.util.AVLMap;
 import com.txb.map.util.BSTMap;
 import com.txb.map.util.LinkedListMap;
 import com.txb.util.FileOperation;
@@ -15,6 +16,25 @@ public class Main {
         System.out.println("Total words: " + list.size());
 
         BSTMap<String, Integer> map = new BSTMap<>();
+        for (String s : list) {
+            if (map.contains(s)) {
+                map.set(s, map.get(s) + 1);
+            } else {
+                map.add(s, 1);
+            }
+        }
+        System.out.println("Total different words: " + map.getSize());
+        System.out.println("Frequency of pride : " + map.get("pride"));
+        System.out.println("Frequency of prejudice :  " + map.get("prejudice"));
+
+    }
+	private static void testAVLMap() {
+        System.out.println("pride-and-prejudice: ");
+        ArrayList<String> list = new ArrayList<>();
+        FileOperation.readFile("pride-and-prejudice.txt", list);
+        System.out.println("Total words: " + list.size());
+
+        AVLMap<String, Integer> map = new AVLMap<>();
         for (String s : list) {
             if (map.contains(s)) {
                 map.set(s, map.get(s) + 1);
@@ -51,10 +71,9 @@ public class Main {
 
 
 	public static void main(String[] args) {
-
 		testLinkedListMap();
 		testBSTMap();
-		
+		testAVLMap();
 	}
 
 }
