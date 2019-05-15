@@ -16,6 +16,7 @@ public class Student {
 
 
     @Override
+    //覆盖这个
     public boolean equals(Object obj) {
         if (this == obj) {//相同的引用
             return true;
