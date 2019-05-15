@@ -1,4 +1,4 @@
-/**
+
 package com.txb.hashtable;
 
 import java.util.TreeMap;
@@ -113,4 +113,3 @@ public class HashTable<K, V> {
         this.hashTable = newHashTable;
     }
 }
-**/
