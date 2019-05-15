@@ -49,6 +49,7 @@ public class HashTable<K, V> {
             map.put(key, value);
             //维持一下size的值
             size++;
+            //扩容
             if (size >= upperTol * M && capacityIndex + 1 < capacity.length) {
                 capacityIndex++;
                 resize(capacity[capacityIndex]);
@@ -102,6 +103,7 @@ public class HashTable<K, V> {
         //更新容量大小
         this.M = newM;
         for (int i = 0; i < oldM; i++) {
+        	//将每一个map中的元素重新放入hash表中
             TreeMap<K, V> treeMap = hashTable[i];
             for (K key : treeMap.keySet()) {
                 newHashTable[hash(key)].put(key, treeMap.get(key));
